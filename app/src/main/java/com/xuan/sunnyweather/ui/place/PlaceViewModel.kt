@@ -2,10 +2,11 @@ package com.xuan.sunnyweather.ui.place
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
+import androidx.lifecycle.ViewModel
 import com.xuan.sunnyweather.logic.Repository
 import com.xuan.sunnyweather.logic.model.Place
 
-class PlaceViewModel {
+class PlaceViewModel : ViewModel() {
 
     /**
      * 可变的LiveData对象
