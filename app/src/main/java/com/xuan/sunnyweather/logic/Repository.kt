@@ -1,6 +1,8 @@
 package com.xuan.sunnyweather.logic
 
 import androidx.lifecycle.liveData
+import com.xuan.sunnyweather.logic.dao.PlaceDao
+import com.xuan.sunnyweather.logic.model.Place
 import com.xuan.sunnyweather.logic.model.Weather
 import com.xuan.sunnyweather.logic.network.SunnyWeatherNetwork
 import kotlinx.coroutines.Dispatchers
@@ -14,6 +16,12 @@ import kotlin.coroutines.CoroutineContext
  * 判断调用方请求的数据应该是从本地数据源中获取还是从网络数据源中获取，并将获得的数据返回给调用方
  */
 object Repository {
+
+    fun savePlace(place: Place) = PlaceDao.savePlace(place)
+
+    fun getSavedPlace() = PlaceDao.getSavedPlace()
+
+    fun isPlaceSaved() = PlaceDao.isPlaceSaved()
 
     /** Kotlin tips：
      *  · liveData()函数：
